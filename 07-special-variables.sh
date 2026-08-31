@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "all argments::$@"
+echo "all argments:: $@"
 echo "num of variables passed: $#"
 echo "script name :$0"
 echo "present directory:$PWD"
@@ -9,4 +9,4 @@ echo "home directory of root user:$HOME"
 echo "PID of this script: $$"
 sleep 10 &
 echo "PID of background process: $!"
-echo "all args passed to script :$*"
+echo "all args passed to script : $*"
