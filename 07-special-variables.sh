@@ -1,5 +1,7 @@
 #!/bin/bash
 
+PERSON1=$1
+PERSON2=$2
 echo "all argments:: $@"
 echo "num of variables passed: $#"
 echo "script name :$0"
