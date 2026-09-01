@@ -1,6 +1,6 @@
 #!/bin/bash
 
-fruits=("apple","bannana","pomo")
+fruits=("apple" "banana" "pomo")
 
 echo "fruits are:: ${fruits[@]}"
 echo "fruits are:: ${fruits[*]}"
