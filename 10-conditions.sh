@@ -4,6 +4,8 @@ num=$1
 
 if [ $num -gt 20 ]; then
    echo "given num is :: $num is greater than 20"
+elif
+    echo "given num is:: $num is equal than 20"
 else
-    echo "given num is:: $num is less than 20"
+    echo "given num is ::$num is less than 20"
 fi
