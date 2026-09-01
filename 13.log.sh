@@ -17,6 +17,7 @@ VALIDATE(){
        exit 1
     else
        echo "$2 installing.....success" |tee -a $logs_file
+    fi
 }
 
 dnf install nginx -y
