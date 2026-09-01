@@ -13,17 +13,17 @@ logs_folder="/var/log/shell_script"
 logs_file="/var/log/shell_script/$0.log"
 
 if [ $USER_ID -ne 0 ]; then
-    echo "$B please get root access $N" |tee -a $logs_file
+    echo  -e "$B please get root access $N" |tee -a $logs_file
     exit 1
 fi
 
 VALIDATE(){
 
     if [ $1 -ne 0 ]; then
-       echo "$2 installing.. $R failure $N ." |tee -a $logs_file
+       echo -e "$2 installing.. $R failure $N ." |tee -a $logs_file
        exit 1
     else
-       echo "$2 installing.. $G success $N ...." |tee -a $logs_file
+       echo -e "$2 installing.. $G success $N ...." |tee -a $logs_file
     fi
 }
 
@@ -36,6 +36,6 @@ do
     dnf install $package -y &>> $logs_file
     VALIDATE $? $package
 else 
-    echo "$package is already installed, $Y skipping $N"
+    echo -e "$package is already installed, $Y skipping $N"
 fi
 done
