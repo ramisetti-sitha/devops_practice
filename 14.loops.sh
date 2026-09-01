@@ -20,10 +20,10 @@ fi
 VALIDATE(){
 
     if [ $1 -ne 0 ]; then
-       echo "$2 installing..$R failure $N." |tee -a $logs_file
+       echo "$2 installing.. $R failure $N ." |tee -a $logs_file
        exit 1
     else
-       echo "$2 installing..$G success $N...." |tee -a $logs_file
+       echo "$2 installing.. $G success $N ...." |tee -a $logs_file
     fi
 }
 
@@ -36,6 +36,6 @@ do
     dnf install $package -y &>> $logs_file
     VALIDATE $? $package
 else 
-    echo "$package is already installed,$Y skipping $N"
+    echo "$package is already installed, $Y skipping $N"
 fi
 done
