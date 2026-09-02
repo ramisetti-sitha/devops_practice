@@ -77,7 +77,7 @@ VALIDATE $? "copying"
 
 dnf install mongodb-mongosh -y
 
-INDEX=$(mongosh --host $MONGODB_HOST --quiet --eval 'db.getMongo().getDBNames().indexof("catalogues")')
+INDEX=$(mongosh --host $MONGODB_HOST --quiet --eval 'db.getMongo().getDBNames().indexOf("catalogues")')
        if [ $INDEX -le 0 ]; then
           mongosh --host $MONGODB_HOST </app/db/master-data.js
           VALIDATE $? "loading data"
