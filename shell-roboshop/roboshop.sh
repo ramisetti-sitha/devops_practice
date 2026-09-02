@@ -53,7 +53,7 @@ do
                }
             }
         ]
-    }
+    }"
 
     echo "record updated for $instance"
 done
