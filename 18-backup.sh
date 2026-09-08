@@ -38,7 +38,7 @@ if [ ! -d $SOURCE_DIR ]; then
     exit 1
 fi
 
-if [ ! -D $DEST_DIR ]; then 
+if [ ! -d $DEST_DIR ]; then 
     log "$R DESTINATION DIRECTORY ::$DEST_DIR does not exist $N"
     exit 1
 fi
