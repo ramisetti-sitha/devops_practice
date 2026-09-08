@@ -62,7 +62,7 @@ else
    if [ -f $ZIP_FILE_NAME ]; then
        log "ARCHIEVAL IS SUCCESS :: $G SUCCESS $N"
        while IFS= read -r filepath; do
-       log ""DELETING FILE :: $filepath
+       log "DELETING FILE :: $filepath"
        rm -r $filepath
        log "DELETED FILE :: $filepath"
        done <<< $FILES 
