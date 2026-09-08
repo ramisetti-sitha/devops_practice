@@ -19,4 +19,4 @@ done <<< $DISK_USAGE
 
 echo -e "$MESSAGE"
 
-sh 20-mail.sh "r.karunasri52@gmail.com" "HIGH DISK USAGE ALERT ON $IP_ADDRESS" "MESSAGE" "HIGH_DISK_USAGE" "$IP_ADDRESS" "DEVOPS TEAM"
+sh 20-mail.sh "r.karunasri52@gmail.com" "HIGH DISK USAGE ALERT ON $IP_ADDRESS" "$MESSAGE" "HIGH_DISK_USAGE" "$IP_ADDRESS" "DEVOPS TEAM"
