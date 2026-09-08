@@ -50,3 +50,27 @@ log "SOURCE DIRECTORY:: $SOURCE_DIR"
 log "DESTINATION DIRECTORY :: $DEST_DIR"
 log "NUMBER OF DAYS :: $DAYS"
 
+if [ -z "${FILES}" ]; then
+   log "NO FILES TO archieve... $Y SKIPPING $N"
+else 
+   log "FILES FOUND TO archieve :: $FILES"
+   TIMESTAMP=$(date "+%F-%H-%M-%S")
+   ZIP_FILE_NAME="$DEST_DIR/app-logs-$TIMESTAMP.tar.gz"
+   log "ARCHIEVE FILENAME :: $ZIP_FILE_NAME"
+   tar -zcvf $ZIP_FILE_NAME $(find $SOURCE_DIR -name "*.log" -type f -mtime +$DAYS)
+
+   if [ -f $ZIP_FILE_NAME ]; then
+       log "ARCHIEVAL IS SUCCESS :: $G SUCCESS $N"
+       while IFS= read -r filepath; do
+       log ""DELETING FILE :: $filepath
+       rm -r $filepath
+       log "DELETED FILE :: $filepath"
+       done <<< $FILES 
+    else 
+       log "ARCHIEVAL IS :: $R FAILURE $N"
+       exit 1
+    fi
+fi
+
+    
+
